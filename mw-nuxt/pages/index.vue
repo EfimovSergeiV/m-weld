@@ -1,5 +1,8 @@
 <script setup>
-  import data from '~/data/ct.json'
+  const config = useRuntimeConfig()
+
+
+  const { data: cts } = await useFetch(`${ config.public.baseURL }/c/cts/`)
 
 
 </script>
@@ -30,9 +33,9 @@
           <div class="grid grid-cols-1 gap-2">
             <p class="text-2xl text-white uppercase font-semibold">Категории</p>
             
-            <div class="flex flex-wrap gap-x-8 gap-y-2">
-              <div v-for="ct in data.categories" class="">
-                <nuxt-link :to="{ name: 'ct-id', params: { id: 4 }}" class="text-lg text-white">{{ ct.name }}</nuxt-link>
+            <div v-if="cts" class="flex flex-wrap gap-x-8 gap-y-2">
+              <div v-for="ct in cts" class="">
+                <nuxt-link :to="{ name: 'catalog-ct', params: { ct: ct.id }}" class="text-lg text-white">{{ ct.name }}</nuxt-link>
               </div>
             </div>
           </div>
@@ -55,7 +58,7 @@
                       <div class="grid grid-cols-1 gap-1">
                         <img src="https://m-weld.ru/images/1464874292.jpg" class="py-2 px-2" alt="">
                         <div class="flex items-center justify-center">
-                          <nuxt-link :to="{ name: 'ct-id', params: { id: 4 }}" class="text-base text-gray-800 py-2">Ресанта саипа 200</nuxt-link>
+                          <nuxt-link :to="{ name: 'catalog-ct', params: { ct: 4 }}" class="text-base text-gray-800 py-2">Ресанта саипа 200</nuxt-link>
                         </div>
                       </div>
                       

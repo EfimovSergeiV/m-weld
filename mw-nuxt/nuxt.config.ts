@@ -31,4 +31,10 @@ export default defineNuxtConfig({
     // '@mdi/font/css/materialdesignicons.min.css',
   ],
 
+  runtimeConfig: {
+    public: {
+      baseURL: 'http://127.0.0.1:8000',
+    },
+  },
+
 })
