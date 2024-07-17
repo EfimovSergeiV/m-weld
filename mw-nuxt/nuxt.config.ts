@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'M-WELD.RU - Сварочное оборудование и материалы',
+      title: 'M-WELD Сварочное оборудование и материалы',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
