@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from .models import CategoryModel, ProductModel
+from .models import CategoryModel, ProductModel, ProductImageModel, ProductPropertyModel
 
 
 
@@ -15,11 +15,27 @@ class CategoryModelAdmin(MPTTModelAdmin):
     mptt_tree_auto_open = 0
 
 
+class ProductImageModelInline(admin.TabularInline):
+    """ Изображения продукта """
+    
+    model = ProductImageModel
+    extra = 0
+
+
+class ProductPropertyModelInline(admin.TabularInline):
+    """ Свойства продукта """
+    
+    model = ProductPropertyModel
+    extra = 0
+
+
+
 class ProductModelAdmin(admin.ModelAdmin):
     """ Продукты """
     list_display = ('name', 'category', 'activated')
     list_filter = ('activated', 'category')
     search_fields = ('name', 'category')
+    inlines = [ProductImageModelInline, ProductPropertyModelInline,]
 
 
 admin.site.register(CategoryModel, CategoryModelAdmin)

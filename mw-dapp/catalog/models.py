@@ -28,11 +28,42 @@ class ProductModel(models.Model):
     category = models.ForeignKey(CategoryModel, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Категория')
     preview = ResizedImageField(size=[200, 200], quality=75, upload_to='prev/', verbose_name='Превью')
     name = models.CharField(max_length=255, verbose_name='Название')
-    description = CKEditor5Field(verbose_name="Description",null=True, blank=True, config_name='extends')
+    description = CKEditor5Field(verbose_name="Описание", null=True, blank=True, config_name='extends')
 
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
+
+    def __str__(self):
+        return self.name
+    
+
+
+class ProductImageModel(models.Model):
+    """ изображение продукта """
+
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, related_name='images')
+    image = ResizedImageField(size=[600, 600], quality=100, upload_to='images/', verbose_name='Изображение')
+
+    class Meta:
+        verbose_name = "Изображение"
+        verbose_name_plural = "Изображения"
+
+    def __str__(self):
+        return self.product.name
+
+
+
+class ProductPropertyModel(models.Model):
+    """ Свойства продукта """
+
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, related_name='properties')
+    name = models.CharField(max_length=255, null=True, blank=True, verbose_name='Название')
+    value = models.CharField(max_length=255, null=True, blank=True, verbose_name='Значение')
+
+    class Meta:
+        verbose_name = "Свойство"
+        verbose_name_plural = "Свойства"
 
     def __str__(self):
         return self.name
