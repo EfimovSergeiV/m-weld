@@ -33,7 +33,7 @@
           <div class="grid grid-cols-1 gap-2">
             <p class="text-2xl text-white uppercase font-semibold">Категории</p>
             
-            <div v-if="cts" class="flex flex-wrap gap-x-8 gap-y-2">
+            <div v-if="cts" class="flex flex-wrap gap-x-10 gap-y-0.5">
               <div v-for="ct in cts" class="">
                 <nuxt-link :to="{ name: 'catalog-ct', params: { ct: ct.id }}" class="text-lg text-white">{{ ct.name }}</nuxt-link>
               </div>

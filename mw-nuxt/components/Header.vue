@@ -33,7 +33,6 @@
         <div class="">
           <div class="flex flex-wrap md:flex-row gap-2 md:gap-8">
             <nuxt-link :to="{ name: 'about' }" class="text-sm md:text-base text-gray-100 ">О компании</nuxt-link>
-            <p class="text-sm md:text-base text-gray-100 ">Вопросы и ответы</p>
             <p class="text-sm md:text-base text-gray-100 ">Видео</p>
             <p class="text-sm md:text-base text-gray-100 ">Контакты</p>
           </div>
