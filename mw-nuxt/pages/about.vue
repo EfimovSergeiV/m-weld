@@ -5,34 +5,32 @@
 
 
 <template>
-  <div class="grid grid-cols-1 gap-4 py-4">
+  <div class="container px-4 mx-auto">
+    <div class="grid grid-cols-1 gap-4 py-4">
 
-    <div class="">
-      <div class="bg-gray-800/50 backdrop-blur-md border border-gray-500 px-8 py-4 rounded-xl">
-        <div class="grid grid-cols-1 gap-0.5">
-          <p class="text-2xl text-white uppercase font-semibold">About page</p>
-          <p class="text-sm text-gray-100 uppercase font-semibold">Сварочные материалы и комплектующие</p>      
-        </div>
+      
+      <div class="flex items-center justify-end">
+        <p class="text-4xl text-white">Спрей цинк 400 M-WELD, (Холодный цинк)</p>
       </div>
-    </div>
+      
+      
+      <div class="flex">
 
-    <div class="">
-      <div class="bg-gray-800/50 backdrop-blur-md border border-gray-500 px-8 py-4 rounded-xl">
-        <div class="grid grid-cols-1 gap-0.5">
-          <p class="text-2xl text-white uppercase font-semibold">m-weld</p>
-          <p class="text-sm text-gray-100 uppercase font-semibold">Сварочные материалы и комплектующие</p>      
+        <div class="px-40">
+          <img :src="`/products/MW-SZC-400.png`" class="w-[220px]" >
         </div>
-      </div>
-    </div>
 
-    <div class="">
-      <div class="bg-gray-800/50 backdrop-blur-md border border-gray-500 px-8 py-4 rounded-xl">
-        <div class="grid grid-cols-1 gap-0.5">
-          <p class="text-2xl text-white uppercase font-semibold">m-weld</p>
-          <p class="text-sm text-gray-100 uppercase font-semibold">Сварочные материалы и комплектующие</p>      
+        <div class="">
+
+
         </div>
-      </div>
-    </div>
 
+      </div>
+
+
+
+
+    </div>
   </div>
+
 </template>

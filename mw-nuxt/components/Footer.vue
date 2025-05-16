@@ -5,10 +5,10 @@
 
 
 <template>
-  <div>
+  <div class=" ">
 
     <div class="">
-      <div class="bg-gray-800/50 backdrop-blur-md border-t border-x border-gray-500 px-8 py-4 rounded-t-xl">
+      <div class="container px-4 mx-auto">
         <div class="flex gap-16 items-end justify-between">
 
           <div class="grid grid-cols-1 gap-0.5">
